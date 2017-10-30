@@ -1,12 +1,21 @@
 <html>
 	<head>
 		<title>Resource Load TEST</title>
-	</head>
-	<body>
-		<script src="">
-		</script>
 
 		<script>
+			window.loadTime = {
+				jquery: {
+					load: {start:null},
+					parse: {start:null, end:null},
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<script>
+			window.loadTime.jquery.load.start = performance.now();
+		</script>
+		<script src="http://slowwly.robertomurray.co.uk/delay/3000/url/https://getelementbyname.github.io/resource-load-test/resource/jquery.js">
 		</script>
 	</body>
 </html>

@@ -1,3 +1,5 @@
+window.loadTime.jquery.parse.start = performance.now();
+
 /*!
  * jQuery JavaScript Library v3.2.1
  * https://jquery.com/
@@ -10251,3 +10253,4 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+window.loadTime.jquery.parse.end = performance.now();
