@@ -10254,3 +10254,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 window.loadTime.jquery.parse.end = performance.now();
+console.log("jquery end", window.loadTime.jquery.parse.end);

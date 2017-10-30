@@ -3,19 +3,43 @@
 		<title>Resource Load TEST</title>
 
 		<script>
+
+
 			window.loadTime = {
 				jquery: {
 					load: {start:null},
 					parse: {start:null, end:null},
-				}
+				},
+				normaljs: {
+					load: {start:null},
+					parse: {start:null, end:null},
+				},
+				pageLoad: {}
 			};
+		</script>
+
+		<script>
+			window.addEventListener("load", function(){
+				window.loadTime.pageLoad = performance.now();
+				console.log("page load", window.loadTime.pageLoad);
+			});
 		</script>
 	</head>
 	<body>
 		<script>
 			window.loadTime.jquery.load.start = performance.now();
+			console.log("normal js load start", window.loadTime.normaljs.load.start);
 		</script>
-		<script src="http://slowwly.robertomurray.co.uk/delay/3000/url/https://getelementbyname.github.io/resource-load-test/resource/jquery.js">
+		<script src="http://slowwly.robertomurray.co.uk/delay/1000/url/https://getelementbyname.github.io/resource-load-test/resource/normal.js">
+		</script>
+
+
+		<img src="http://slowwly.robertomurray.co.uk/delay/1000/url/https://getelementbyname.github.io/resource-load-test/resource/birds.jpg"/>
+		<script>
+			window.loadTime.jquery.load.start = performance.now();
+			console.log("jquery load start", window.loadTime.jquery.load.start);
+		</script>
+		<script src="http://slowwly.robertomurray.co.uk/delay/1000/url/https://getelementbyname.github.io/resource-load-test/resource/jquery.js">
 		</script>
 	</body>
 </html>
